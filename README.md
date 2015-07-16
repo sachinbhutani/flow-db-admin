@@ -1,4 +1,4 @@
-Meteor Admin
+Meteor Flow DB Admin
 ============
 `$ meteor add sach:flow-db-admin`
 
