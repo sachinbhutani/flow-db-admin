@@ -1,6 +1,6 @@
 Package.describe({
   name: 'sach:flow-db-admin',
-  version: '0.9.1',
+  version: '1.0.0',
   // Brief, one-line summary of the package.
   summary: 'Meteor Database Admin package for use with Flow Router',
   // URL to the Git repository containing the source code for this package.
@@ -21,9 +21,9 @@ Package.onUse(function(api) {
     'underscore',
     'reactive-var',
     'meteorhacks:unblock@1.1.0',
-    'meteorhacks:flow-router@1.18.0',
-    'meteorhacks:flow-layout@1.4.2',
-    'zimme:active-route@2.2.0',
+    'kadira:flow-router@2.0.1',
+    'kadira:blaze-layout@2.0.0',
+    'zimme:active-route@2.3.0',
     'reywood:publish-composite@1.3.6',
     'aldeed:collection2@2.3.3',
     'aldeed:autoform@5.3.0',
