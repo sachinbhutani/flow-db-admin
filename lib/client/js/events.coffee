@@ -1,7 +1,7 @@
 Template.fAdminLayout.events
 	'click .btn-delete': (e,t) ->
 		_id = $(e.target).attr('doc')
-		if Session.equals 'admin_collection_name', 'Users' 
+		if Session.equals 'admin_collection_name', 'Users'
 			Session.set 'admin_id', _id
 			Session.set 'admin_doc', Meteor.users.findOne(_id)
 		else
@@ -14,6 +14,8 @@ Template.AdminDeleteModal.events
 		_id = Session.get 'admin_id'
 		Meteor.call 'adminRemoveDoc', collection, _id, (e,r)->
 			$('#admin-delete-modal').modal('hide')
+			$('body').removeClass('modal-open')
+			$('.modal-backdrop').remove()
 
 Template.AdminDashboardUsersEdit.events
 	'click .btn-add-role': (e,t) ->

@@ -4,7 +4,7 @@ Meteor Flow DB Admin
 
 A fork of yogiben:admin package to work with flow-router instead of iron:router
 
-A complete admin dashboard solution for meteor built off the [kadirahq:flow-router](https://github.com/kadirahq/flow-router), [kadirahq:blaze-layout](https://github.com/kadirahq/blaze-layout), [alanning:roles](https://github.com/alanning/meteor-roles/) and [aldeed:autoform](https://github.com/aldeed/meteor-autoform) packages and frontend from the open source admin dashboard template, [Admin LTE](https://github.com/almasaeed2010/AdminLTE).
+A complete admin dashboard solution for meteor built off the [kadira:flow-router](https://github.com/kadirahq/flow-router), [kadira:blaze-layout](https://github.com/kadirahq/blaze-layout), [alanning:roles](https://github.com/alanning/meteor-roles/) and [aldeed:autoform](https://github.com/aldeed/meteor-autoform) packages and frontend from the open source admin dashboard template, [Admin LTE](https://github.com/almasaeed2010/AdminLTE).
 
 
 ![alt tag](https://raw.githubusercontent.com/yogiben/meteor-admin/master/readme/screenshot1.png)
@@ -15,8 +15,8 @@ A complete admin dashboard solution for meteor built off the [kadirahq:flow-rout
 
 #### 0. Prerequisites####
 This package is designed to work with certain types of projects. Your project should be using and have configured
-* Flow Router - `meteor add kadirahq:flow-router`
-* Blaze Layout - `meteor add kadirahq:blaze-layout`
+* Flow Router - `meteor add kadira:flow-router`
+* Blaze Layout - `meteor add kadira:blaze-layout`
 * Collection Helpers - `meteor add dburles:collection-helpers`
 * Collection2 - `meteor add aldeed:collection2`
 * An accounts system - e.g. `meteor add accounts-base accounts-password`
