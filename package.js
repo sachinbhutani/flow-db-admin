@@ -36,7 +36,7 @@ Package.onUse(function(api) {
     ],
     both);
 
-  api.use(['session','jquery','templating'],'client')
+  api.use(['less','session','jquery','templating'],'client')
 
   api.use(['email'],'server')
 
@@ -59,7 +59,8 @@ Package.onUse(function(api) {
     'lib/client/js/templates.coffee',
     'lib/client/js/events.coffee',
     'lib/client/js/slim_scroll.js',
-    'lib/client/js/autoForm.coffee'
+    'lib/client/js/autoForm.coffee',
+    'lib/client/css/admin-custom.less'
     ], 'client');
 
   api.add_files([
@@ -67,7 +68,7 @@ Package.onUse(function(api) {
     'lib/server/methods.coffee'
     ], 'server');
 
-  api.addAssets(['lib/client/css/admin-custom.css'],'client');
+  //api.addAssets(['lib/client/css/admin-custom.css'],'client');
   api.export('AdminDashboard',both)
 
 });
