@@ -295,3 +295,6 @@ Update to flow-router 2.0 and blaze-layout
 Updated from meteorhacks:flow-router, to kadirahq:flow-router (flow-router 2.0)
 Updated from meteorhacks:flow-layout, to kadirahq:blaze-layout
 Minor bug fixes.
+* Version 1.0.3
+Update to less for working with Meteor 1.2, backward compatible with Meteor 1.1
+thanks to @CaptainN
