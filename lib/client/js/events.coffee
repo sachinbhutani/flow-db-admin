@@ -8,15 +8,6 @@ Template.fAdminLayout.events
 			Session.set 'admin_id', parseID(_id)
 			Session.set 'admin_doc', adminCollectionObject(Session.get('admin_collection_name')).findOne(parseID(_id))
 
-Template.AdminDeleteModal.events
-	'click #confirm-delete': () ->
-		collection = Session.get 'admin_collection_name'
-		_id = Session.get 'admin_id'
-		Meteor.call 'adminRemoveDoc', collection, _id, (e,r)->
-			$('#admin-delete-modal').modal('hide')
-			$('body').removeClass('modal-open')
-			$('.modal-backdrop').remove()
-
 Template.AdminDashboardUsersEdit.events
 	'click .btn-add-role': (e,t) ->
 		console.log 'adding user'
@@ -29,3 +20,10 @@ Template.AdminHeader.events
 	'click .btn-sign-out': () ->
 		Meteor.logout ->
 			FlowRouter.go('/')
+
+Template.adminDeleteWidget.events
+	'click #confirm-delete': () ->
+		collection = FlowRouter.getParam 'collectionName'
+		_id = FlowRouter.getParam '_id'
+		Meteor.call 'adminRemoveDoc', collection, _id, (e,r)->
+			FlowRouter.go  '/admin/view/' + collection

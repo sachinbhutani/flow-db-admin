@@ -1,6 +1,6 @@
 Package.describe({
   name: 'sach:flow-db-admin',
-  version: '1.0.3',
+  version: '1.1.0',
   // Brief, one-line summary of the package.
   summary: 'Meteor Database Admin package for use with Flow Router',
   // URL to the Git repository containing the source code for this package.
@@ -11,7 +11,7 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('1.0');
+  api.versionsFrom('1.2');
 
   both = ['client','server']
 
@@ -21,22 +21,22 @@ Package.onUse(function(api) {
     'underscore',
     'reactive-var',
     'meteorhacks:unblock@1.1.0',
-    'kadira:flow-router@2.0.1',
-    'kadira:blaze-layout@2.0.0',
-    'zimme:active-route@2.3.0',
-    'reywood:publish-composite@1.3.6',
-    'aldeed:collection2@2.3.3',
-    'aldeed:autoform@5.3.0',
+    'kadira:flow-router@2.6.2',
+    'kadira:blaze-layout@2.1.0',
+    'zimme:active-route@2.3.2',
+    'reywood:publish-composite@1.4.2',
+    'aldeed:collection2@2.5.0',
+    'aldeed:autoform@5.5.1',
     'aldeed:template-extension@3.4.3',
     'alanning:roles@1.2.13',
-    'raix:handlebar-helpers@0.2.4',
-    'momentjs:moment@2.10.3',
-    'aldeed:tabular@1.2.0',
+    'raix:handlebar-helpers@0.2.5',
+    'momentjs:moment@2.10.6',
+    'aldeed:tabular@1.4.0',
     'mfactory:admin-lte@0.0.2'
     ],
     both);
 
-  api.use(['less@1.0.0 || 2.5.0','session','jquery','templating'],'client')
+  api.use(['session','jquery','templating'],'client')
 
   api.use(['email'],'server')
 
@@ -54,7 +54,6 @@ Package.onUse(function(api) {
     'lib/client/html/fadmin_layouts.html',
     'lib/client/html/admin_sidebar.html',
     'lib/client/html/admin_header.html',
-    'lib/client/css/admin-custom.less',
     'lib/client/js/admin_layout.js',
     'lib/client/js/helpers.coffee',
     'lib/client/js/templates.coffee',
@@ -68,6 +67,7 @@ Package.onUse(function(api) {
     'lib/server/methods.coffee'
     ], 'server');
 
+  api.addAssets(['lib/client/css/admin-custom.css'],'client');
   api.export('AdminDashboard',both)
 
 });

@@ -7,7 +7,7 @@
 </template>
 
 <template name="AdminDashboardNew">
-	{{> adminAlert}}	
+	{{> adminAlert}}
 	{{#if adminTemplate admin_collection_name 'new'}}
 		{{#with adminTemplate admin_collection_name 'new'}}
 		<p>start of dynamic temp</p>
@@ -31,6 +31,9 @@
 		{{> UI.dynamic template=name data=data }}
 		{{/with}}
 	{{else}}
+	 {{#if action}}
+			{{> adminDeleteWidget}}
+	 {{/if}}
 		<div class="box box-default">
 			<div class="box-body">
 				{{#if fadmin_doc}}
@@ -42,7 +45,7 @@
 		</div>
 	{{/if}}
 	{{else}}
-		<div class="box box-default"><div class="box-body">Loading...</div></div>	
+		<div class="box box-default"><div class="box-body">Loading...</div></div>
 	{{/if}}
 </template>
 
@@ -59,17 +62,17 @@
 		{{> UI.dynamic template=name data=data }}
 		{{/with}}
 	{{else}}
-		{{#if hasDocuments}}			
+		{{#if hasDocuments}}
 			{{> tabular table=admin_table class="table dataTable"}}
 		{{else}}
 			<div class="alert alert-info">
 				<p>There are no visible items in this collection.</p>
 				<p><a href="{{newPath}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add one</a></p>
 			</div>
-		{{/if}}	
+		{{/if}}
 	{{/if}}
 	{{else}}
-		<div class="box box-default"><div class="box-body">Loading...</div></div>	
+		<div class="box box-default"><div class="box-body">Loading...</div></div>
 	{{/if}}
 </template>
 
@@ -78,25 +81,22 @@
 		<div class="box-body">
 			{{> adminAlert}}
 			{{# autoForm id="adminNewUser" schema=AdminSchemas.newUser type="method" meteormethod="adminNewUser"}}
-
 			{{>afQuickField name="email"}}
 			{{>afQuickField name="chooseOwnPassword"}}
-
 			{{#if afFieldValueIs name="chooseOwnPassword" value=false}}
-
 			{{>afQuickField name="password"}}
 			{{>afQuickField name="sendPassword"}}
-
 			{{/if}}
-
 			<button type="submit" class="btn btn-primary">Add User</button>
-
 			{{/autoForm}}
 		</div>
 	</div>
 </template>
 
 <template name="AdminDashboardUsersEdit">
+	{{#if action}}
+		{{> adminDeleteWidget}}
+	{{/if}}
 	<div class="box box-default">
 		<div class="box-body">
 			{{> adminAlert}}
@@ -160,11 +160,11 @@
 </template>
 
 <template name="adminUsersIsAdmin">
-	{{#if adminIsUserInRole this._id 'admin'}}<i class="fa fa-check"></i>{{/if}}
+	{{#if checkadmin}}<i class="fa fa-check"></i>{{/if}}
 </template>
 
 <template name="adminUsersMailBtn">
-	<a href="mailto:{{adminUserEmail this}}" class="btn btn-default btn-xs"><i class="fa fa-envelope"></i></a>
+	<a href="mailto:{{adminUserEmail}}" class="btn btn-default btn-xs"><i class="fa fa-envelope"></i></a>
 </template>
 
 <template name="adminEditBtn">
@@ -173,6 +173,6 @@
 </template>
 
 <template name="adminDeleteBtn">
-	<a data-toggle="modal" doc="{{_id}}" href='#admin-delete-modal' class="hidden-xs btn btn-xs btn-danger btn-delete"><i class="fa fa-times" doc="{{_id}}"></i></a>
-	<a data-toggle="modal" doc="{{_id}}" href='#admin-delete-modal' class="visible-xs btn btn-sm btn-danger btn-delete"><i class="fa fa-times" doc="{{_id}}"></i> Delete</a>
+	 <a href={{path}} class="hidden-xs btn btn-xs btn-primary"><i class="fa fa-times"></i></a>
+	 <a href="{{path}}" class="visible-xs btn btn-sm btn-primary"><i class="fa fa-times"></i>Delete</a>
 </template>

@@ -64,8 +64,8 @@ Template.registerHelper 'admin_omit_fields', ->
 Template.registerHelper 'AdminSchemas', ->
 	AdminDashboard.schemas
 
-Template.registerHelper 'adminIsUserInRole', (_id,role)->
-	Roles.userIsInRole _id, role
+# Template.registerHelper 'adminIsUserInRole', (_id,role)->
+# 	Roles.userIsInRole _id, role
 
 Template.registerHelper 'adminGetUsers', ->
 	Meteor.users
@@ -98,13 +98,13 @@ Template.registerHelper 'adminWidgets', ->
 	if typeof AdminConfig.dashboard != 'undefined' and typeof AdminConfig.dashboard.widgets != 'undefined'
 		AdminConfig.dashboard.widgets
 
-Template.registerHelper 'adminUserEmail', (user) ->
-	if user && user.emails && user.emails[0] && user.emails[0].address
-		user.emails[0].address
-	else if user && user.services && user.services.facebook && user.services.facebook.email
-		user.services.facebook.email
-	else if user && user.services && user.services.google && user.services.google.email
-		user.services.google.email
+# Template.registerHelper 'adminUserEmail', (user) ->
+# 	if user && user.emails && user.emails[0] && user.emails[0].address
+# 		user.emails[0].address
+# 	else if user && user.services && user.services.facebook && user.services.facebook.email
+# 		user.services.facebook.email
+# 	else if user && user.services && user.services.google && user.services.google.email
+# 		user.services.google.email
 
 Template.registerHelper 'adminViewPath', (collection)->
 		FlowRouter.path "/admin/view/:coll",{coll: collection}
