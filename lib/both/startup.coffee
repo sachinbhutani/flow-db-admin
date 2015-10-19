@@ -55,7 +55,7 @@ AdminTables.Users = new Tabular.Table
 			data: 'emails'
 			title: 'Email'
 			render: (value) ->
-				value[0].address
+				if value then value[0].address else ''
 			searchable: true
 		}
 		{

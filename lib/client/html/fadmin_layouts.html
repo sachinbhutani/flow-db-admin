@@ -15,7 +15,7 @@
 						<ol class="breadcrumb">
 							<li><a href="/admin/">Dashboard</a></li>
 							{{#if $.Session.get 'admin_collection_name'}}
-							<li><a href="/admin/{{$.Session.get 'admin_collection_name'}}/">{{adminCollectionLabel admin_collection_name}}</a></li>
+							<li><a href="/admin/view/{{$.Session.get 'admin_collection_name'}}/">{{adminCollectionLabel admin_collection_name}}</a></li>
 							{{/if}}
 							{{#if $.Session.equals 'admin_collection_page' 'new'}}
 							<li>New</li>
