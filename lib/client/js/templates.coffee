@@ -20,6 +20,7 @@ Template.adminUsersMailBtn.helpers adminUserEmail: ->
 		user.services.facebook.email
 	else if user && user.services && user.services.google && user.services.google.email
 		user.services.google.email
+        else 'none@example.com'
 
 Template.adminEditBtn.helpers path: ->
   FlowRouter.path '/admin/edit/:coll/:_id',
