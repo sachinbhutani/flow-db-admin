@@ -32,7 +32,8 @@ Package.onUse(function(api) {
     'raix:handlebar-helpers@0.2.5',
     'momentjs:moment@2.10.6',
     'aldeed:tabular@1.4.0',
-    'mfactory:admin-lte@0.0.2'
+    'mfactory:admin-lte@0.0.2',
+    'check'
     ],
     both);
 
