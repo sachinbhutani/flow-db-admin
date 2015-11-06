@@ -26,7 +26,7 @@ Package.onUse(function(api) {
     'zimme:active-route@2.3.2',
     'reywood:publish-composite@1.4.2',
     'aldeed:collection2@2.5.0',
-    'aldeed:autoform@5.5.1',
+    'aldeed:autoform@5.7.1',
     'aldeed:template-extension@3.4.3',
     'alanning:roles@1.2.13',
     'raix:handlebar-helpers@0.2.5',
