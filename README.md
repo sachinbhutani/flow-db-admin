@@ -89,7 +89,7 @@ Schemas.Posts = new SimpleSchema({
     },
     autoform: {
       options: function () {
-        _.map(Meteor.users.find().fetch(), function (user) {
+        return _.map(Meteor.users.find().fetch(), function (user) {
           return {
             label: user.emails[0].address,
             value: user._id
