@@ -119,4 +119,4 @@ Template.registerHelper 'isSubReady', (sub) ->
   if sub
     FlowRouter.subsReady sub
   else
-    FlowRouter.subsReady()
+    FlowRouter.subsReady
