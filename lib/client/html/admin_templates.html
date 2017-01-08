@@ -10,9 +10,7 @@
 	{{> adminAlert}}
 	{{#if adminTemplate admin_collection_name 'new'}}
 		{{#with adminTemplate admin_collection_name 'new'}}
-		<p>start of dynamic temp</p>
 		{{> UI.dynamic template=name data=data }}
-		<p>end of dynamic temp</p>
 		{{/with}}
 	{{else}}
 		<div class="box box-default">
