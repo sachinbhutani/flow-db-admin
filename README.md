@@ -43,8 +43,8 @@ This config will make the **first user** admin.
 You can also set the adminEmails property which will will override this.
 ```javascript
 AdminConfig = {
-  name: 'My App'
-  adminEmails: ['ben@code2create.com']
+  name: 'My App',
+  adminEmails: ['ben@code2create.com'],
   collections: {
     Posts: {}
   }
@@ -120,16 +120,16 @@ AdminConfig = {
 It is possible to configure the way the collection is managed.
 ```
 Comments: {
-  icon: 'comment'
-  omitFields: ['updatedAt']
+  icon: 'comment',
+  omitFields: ['updatedAt'],
   tableColumns: [
    { label: 'Content', name: 'content' },
-   { label: 'Post', name: 'postTitle()' }
+   { label: 'Post', name: 'postTitle()' },
    { label: 'User', name: 'owner', template: 'userEmail' }
   ]
-  showEditColumn: true // Set to false to hide the edit button. True by default.
-  showDelColumn: true // Set to false to hide the edit button. True by default.
-  showWidget: false
+  showEditColumn: true, // Set to false to hide the edit button. True by default.
+  showDelColumn: true, // Set to false to hide the edit button. True by default.
+  showWidget: false,
   color: 'red'
 }
 ```
