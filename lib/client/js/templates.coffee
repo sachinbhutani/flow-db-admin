@@ -50,6 +50,13 @@ Template.AdminDashboardEdit.helpers
 	  adminCollectionObject(editcollectionName).findOne _id : editId if editcollectionName && editId
   action: -> FlowRouter.getQueryParam 'action'
 
+
+Template.AdminDashboardUsersEdit.rendered = ->
+  editcollectionName = FlowRouter.getParam 'collectionName'
+  editId	= FlowRouter.getParam '_id'
+  console.log 'here', adminCollectionObject(editcollectionName).findOne _id : editId
+  Session.set 'admin_doc', adminCollectionObject(editcollectionName).findOne _id : editId
+
 Template.AdminDashboardUsersEdit.helpers
   user: -> Meteor.users.find(FlowRouter.getParam '_id').fetch()
   action: -> FlowRouter.getQueryParam 'action'
