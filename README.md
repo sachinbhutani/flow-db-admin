@@ -30,7 +30,7 @@ Download to your packages directory and run `meteor add sach:flow-db-admin` then
 #### 2. Config ####
 The simplest possible config with one, 'Posts', collection.
 
-#####Server and Client#####
+##### Server and Client #####
 ```javascript
 AdminConfig = {
   collections: {
@@ -257,13 +257,13 @@ AdminConfig = {
 #### Extending Dashboard ####
 There are few things you can do to integrate your package with meteor-admin. Remember to wrap it in Meteor.startup on client.
 
-#####Add sidebar item with single link#####
+##### Add sidebar item with single link #####
 
 ```javascript
 AdminDashboard.addSidebarItem('New User', AdminDashboard.path('/Users/new'), { icon: 'plus' })
 ```
 
-#####Add sidebar item with multiple links#####
+##### Add sidebar item with multiple links #####
 
 ```javascript
 AdminDashboard.addSidebarItem('Analytics', {
@@ -275,7 +275,7 @@ AdminDashboard.addSidebarItem('Analytics', {
 });
 ```
 
-#####Add link to collection item#####
+##### Add link to collection item #####
 
 This will iterate through all collection items in sidebar and call your function. If you return an object with the `title` and `url` properties the link will be added. Otherwise it will be ignored.
 
