@@ -18,7 +18,7 @@ This package is designed to work with certain types of projects. Your project sh
 * Flow Router - `meteor add kadira:flow-router`
 * Blaze Layout - `meteor add kadira:blaze-layout`
 * Collection Helpers - `meteor add dburles:collection-helpers`
-* Collection2 - `meteor add aldeed:collection2`
+* Collection2 - `meteor add aldeed:collection2-core`
 * An accounts system - e.g. `meteor add accounts-base accounts-password`
 * Roles - `meteor add alanning:roles`
 * Bootstrap 3 - e.g. `meteor add twbs:bootstrap`

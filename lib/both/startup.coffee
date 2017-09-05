@@ -1,3 +1,5 @@
+`import Tabular from 'meteor/aldeed:tabular'`
+
 @AdminTables = {}
 
 adminTablesDom = '<"box"<"box-header"<"box-toolbar"<"pull-left"<lf>><"pull-right"p>>><"box-body"t>>'

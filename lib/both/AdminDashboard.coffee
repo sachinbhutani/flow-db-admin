@@ -1,3 +1,5 @@
+SimpleSchema = require('simpl-schema').default;
+
 AdminDashboard =
 	schemas: {}
 	sidebarItems: []

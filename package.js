@@ -1,6 +1,6 @@
 Package.describe({
   name: 'sach:flow-db-admin',
-  version: '1.1.5',
+  version: '1.2.0',
   // Brief, one-line summary of the package.
   summary: 'Meteor Database Admin package for use with Flow Router',
   // URL to the Git repository containing the source code for this package.
@@ -11,7 +11,7 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('1.2');
+  api.versionsFrom('1.3');
 
   both = ['client','server']
 
@@ -21,19 +21,21 @@ Package.onUse(function(api) {
     'underscore',
     'reactive-var',
     'meteorhacks:unblock@1.1.0',
-    'kadira:flow-router@2.6.2',
-    'kadira:blaze-layout@2.1.0',
+    'kadira:flow-router@2.12.1',
+    'kadira:blaze-layout@2.3.0',
     'zimme:active-route@2.3.2',
-    'reywood:publish-composite@1.4.2',
-    'aldeed:collection2@2.5.0',
-    'aldeed:autoform@5.7.1',
-    'aldeed:template-extension@3.4.3',
-    'alanning:roles@1.2.13',
+    'reywood:publish-composite@1.5.2',
+    'aldeed:collection2-core@2.0.1',
+    'aldeed:autoform@6.2.0',
+    'aldeed:template-extension@4.1.0',
+    'alanning:roles@1.2.14',
     'raix:handlebar-helpers@0.2.5',
-    'momentjs:moment@2.10.6',
-    'aldeed:tabular@1.4.0',
+    'momentjs:moment@2.18.1',
+    'aldeed:tabular@2.1.1',
     'mfactory:admin-lte@0.0.2',
-    'check'
+	'tmeasday:check-npm-versions@0.3.1',
+    'check',
+	'ecmascript'
     ],
     both);
 

@@ -13,3 +13,9 @@ Version 1.1
 Version 1.1.5 
 * Update to add check for admin authorization check , thanks @markoshust
 * Updated to autoform version 5.7.1
+
+Version 1.2
+* Updated package transition to collection2-core
+* Bumped package versions to latest
+* Bumped Meteor version from 1.3 (because newer Tabular requires at least 1.3)
+* Added ecmascript to support import/require of Tabular and SimpleSchema
