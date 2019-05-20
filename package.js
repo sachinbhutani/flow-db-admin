@@ -1,6 +1,6 @@
 Package.describe({
     name          : 'sach:flow-db-admin',
-    version       : '1.2.0',
+    version       : '1.2.1',
     // Brief, one-line summary of the package.
     summary       : 'Meteor Database Admin package for use with Flow Router',
     // URL to the Git repository containing the source code for this package.
@@ -11,6 +11,8 @@ Package.describe({
 });
 
 Package.onUse(function (api){
+    api.versionsFrom('1.6');
+
     var both = [ 'client', 'server' ];
 
     api.use(
@@ -34,8 +36,6 @@ Package.onUse(function (api){
             'tmeasday:check-npm-versions@0.3.1',
             'check',
             'ecmascript',
-            'es5-shim',
-            'babel-runtime',
         ],
         both,
     );
@@ -56,6 +56,7 @@ Package.onUse(function (api){
 
     api.addFiles(
         [
+            'lib/client/js/main.coffee',
             'lib/client/html/admin_templates.html',
             'lib/client/html/admin_widgets.html',
             'lib/client/html/fadmin_layouts.html',
@@ -68,7 +69,6 @@ Package.onUse(function (api){
             'lib/client/js/slim_scroll.js',
             'lib/client/js/autoForm.coffee',
             'lib/client/css/admin-custom.less',
-            'lib/client/js/main.coffee',
         ],
         'client',
     );

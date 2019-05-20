@@ -1,13 +1,13 @@
-SimpleSchema = require('simpl-schema').default;
+SimpleSchema = require('simpl-schema').default
 
 AdminDashboard =
 	schemas: {}
 	sidebarItems: []
 	collectionItems: []
-	alertSuccess: (message)->
+	alertSuccess: (message) ->
 		Session.set 'adminError', null
 		Session.set 'adminSuccess', message
-	alertFailure: (message)->
+	alertFailure: (message) ->
 		Session.set 'adminSuccess', null
 		Session.set 'adminError', message
 
@@ -15,11 +15,18 @@ AdminDashboard =
 		if not Roles.userIsInRole Meteor.userId(), ['admin']
 			Meteor.call 'adminCheckAdmin'
 			if (typeof AdminConfig?.nonAdminRedirectRoute == "string")
-			  Router.go AdminConfig.nonAdminRedirectRoute
+				Router.go AdminConfig.nonAdminRedirectRoute
 		if typeof @.next == 'function'
 			@next()
-	adminRoutes: ['adminDashboard','adminDashboardUsersNew','adminDashboardUsersEdit','adminDashboardView','adminDashboardNew','adminDashboardEdit']
-	collectionLabel: (collection)->
+	adminRoutes: [
+		'adminDashboard',
+		'adminDashboardUsersNew',
+		'adminDashboardUsersEdit',
+		'adminDashboardView',
+		'adminDashboardNew',
+		'adminDashboardEdit'
+		]
+	collectionLabel: (collection) ->
 		if collection == 'Users'
 			'Users'
 		else if collection? and typeof AdminConfig.collections[collection].label == 'string'
@@ -54,7 +61,7 @@ AdminDashboard =
 
 
 AdminDashboard.schemas.newUser = new SimpleSchema
-	email: 
+	email:
 		type: String
 		label: "Email address"
 	chooseOwnPassword:
@@ -79,3 +86,5 @@ AdminDashboard.schemas.changePassword = new SimpleSchema
 		type: String
 	password:
 		type: String
+
+@AdminTables = {}
